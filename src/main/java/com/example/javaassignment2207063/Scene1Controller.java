@@ -22,7 +22,7 @@ public class Scene1Controller {
 
 
     public void initialize() {
-        addCourseRow(); // Start with one row
+        addCourseRow(); 
     }
 
     @FXML
