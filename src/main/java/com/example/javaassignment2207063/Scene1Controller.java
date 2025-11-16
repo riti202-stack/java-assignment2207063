@@ -10,15 +10,7 @@ import javafx.scene.layout.VBox;
 
 public class Scene1Controller {
 
-    public void clickCourse() {
 
-        try {
-            SceneLoader.switchScene("Scene2.fxml");
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-
-    }
 
     public void goBack() throws Exception {
         SceneLoader.switchScene("hello-view.fxml");
@@ -98,6 +90,10 @@ public class Scene1Controller {
                 }
             }
         }
+
+       if (totalCredits == DataStore.totalCreditTarget) {
+            SceneLoader.switchScene("Scene2.fxml");
+       }
 
 
     }

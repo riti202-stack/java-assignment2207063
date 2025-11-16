@@ -7,9 +7,8 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-
 <?import javafx.scene.layout.VBox?>
-<BorderPane maxHeight="-Infinity" stylesheets="@style.css" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: FEEBE7;" xmlns="http://javafx.com/javafx/25" fx:controller="com.example.javaassignment2207063.Scene1Controller" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: FEEBE7;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javaassignment2207063.Scene1Controller">
    <top>
       <StackPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="70.0" prefWidth="400.0" BorderPane.alignment="CENTER">
          <children>
@@ -36,21 +35,21 @@
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
          </BorderPane.margin>
          <left>
-            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="120.0" style="-fx-background-color: pink;" text="Add Couses" textFill="#ac3535" BorderPane.alignment="CENTER" >
+            <Button mnemonicParsing="false" onAction="#addCourseRow" prefHeight="50.0" prefWidth="120.0" style="-fx-background-color: pink;" text="Add Couses" textFill="#ac3535" BorderPane.alignment="CENTER">
                <font>
                   <Font name="Arial Bold" size="14.0" />
                </font>
             </Button>
          </left>
          <center>
-            <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="120.0" style="-fx-background-color: pink;" text="Calculate GPA" textFill="#ac3535" BorderPane.alignment="CENTER" onAction="#clickCourse">
+            <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="120.0" style="-fx-background-color: pink;" text="Calculate GPA" textFill="#ac3535" BorderPane.alignment="CENTER" onAction="#calculateGPA">
                <font>
                   <Font name="Arial Bold" size="14.0" />
                </font>
             </Button>
          </center>
          <right>
-            <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="120.0" style="-fx-background-color: pink;" text="GO BACK" textFill="#ac3535" BorderPane.alignment="CENTER" onAction="#goBack">
+            <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="120.0" style="-fx-background-color: pink;" text="GO BACK" textFill="#ac3535" BorderPane.alignment="CENTER">
                <font>
                   <Font name="Arial Bold" size="14.0" />
                </font>
