@@ -1,0 +1,23 @@
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.javaassignment2207063.Scene2Controller"
+            prefWidth="600" prefHeight="400">
+
+    <Label text="GPA Result" layoutX="250" layoutY="20" style="-fx-font-size: 20px;"/>
+
+    <TableView fx:id="table" layoutX="50" layoutY="60" prefWidth="500" prefHeight="280">
+        <columns>
+            <TableColumn fx:id="nameCol" text="Course Name" prefWidth="100"/>
+            <TableColumn fx:id="codeCol" text="Code" prefWidth="60"/>
+            <TableColumn fx:id="creditCol" text="Credit" prefWidth="60"/>
+            <TableColumn fx:id="t1Col" text="Teacher 1" prefWidth="100"/>
+            <TableColumn fx:id="t2Col" text="Teacher 2" prefWidth="100"/>
+            <TableColumn fx:id="gradeCol" text="Grade"/>
+        </columns>
+    </TableView>
+
+</BorderPane>

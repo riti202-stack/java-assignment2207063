@@ -10,7 +10,7 @@ import javafx.scene.layout.VBox;
 
 public class Scene1Controller {
 
-    public void clickCourse(){
+    public void clickCourse() {
 
         try {
             SceneLoader.switchScene("Scene2.fxml");
@@ -19,13 +19,14 @@ public class Scene1Controller {
         }
 
     }
+
     public void goBack() throws Exception {
         SceneLoader.switchScene("hello-view.fxml");
 
     }
+
     @FXML
     private VBox courseVBox;
-
 
 
     public void initialize() {
@@ -63,7 +64,7 @@ public class Scene1Controller {
         Button removeBtn = new Button("❌");
         removeBtn.setOnAction(e -> {
             courseVBox.getChildren().remove(row);
-            checkTotalCredits();
+
         });
 
         row.getChildren().addAll(courseName, courseCode, credit, teacher1, teacher2, gradeBox, removeBtn);
@@ -99,11 +100,8 @@ public class Scene1Controller {
         }
 
 
-
-
-
-
-        }
+    }
+}
 
 
 
