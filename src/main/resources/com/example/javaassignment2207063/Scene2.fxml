@@ -1,27 +1,38 @@
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
 
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TableColumn?>
 <BorderPane xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.example.javaassignment2207063.Scene2Controller"
-            prefWidth="600" prefHeight="400" stylesheets="@style.css">
+            prefWidth="600" prefHeight="400"
+            stylesheets="@style.css">
 
+    <!-- Top Section -->
     <top>
-        <Label text="GPA Result" layoutX="250" layoutY="20" style="-fx-font-size: 20px;"/>
-
+        <GridPane alignment="CENTER" style="-fx-padding: 15;">
+            <Label text="GPA Result" style="-fx-font-size: 20px;" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+        </GridPane>
     </top>
+
+    <!-- Center Section -->
     <center>
-        <TableView fx:id="table" layoutX="50" layoutY="60" prefWidth="500" prefHeight="280">
-            <columns>
-                <TableColumn fx:id="nameCol" text="Course Name" prefWidth="100"/>
-                <TableColumn fx:id="codeCol" text="Code" prefWidth="60"/>
-                <TableColumn fx:id="creditCol" text="Credit" prefWidth="60"/>
-                <TableColumn fx:id="t1Col" text="Teacher 1" prefWidth="100"/>
-                <TableColumn fx:id="t2Col" text="Teacher 2" prefWidth="100"/>
-                <TableColumn fx:id="gradeCol" text="Grade"/>
-            </columns>
-        </TableView>
+        <GridPane alignment="CENTER" hgap="10" vgap="10" style="-fx-padding: 20;">
+            <TableView fx:id="table"
+                       prefWidth="500"
+                       prefHeight="280"
+                       GridPane.columnIndex="0"
+                       GridPane.rowIndex="0">
+
+                <columns>
+                    <TableColumn fx:id="nameCol" text="Course Name" prefWidth="100"/>
+                    <TableColumn fx:id="codeCol" text="Code" prefWidth="60"/>
+                    <TableColumn fx:id="creditCol" text="Credit" prefWidth="60"/>
+                    <TableColumn fx:id="t1Col" text="Teacher 1" prefWidth="100"/>
+                    <TableColumn fx:id="t2Col" text="Teacher 2" prefWidth="100"/>
+                    <TableColumn fx:id="gradeCol" text="Grade"/>
+                </columns>
+
+            </TableView>
+        </GridPane>
     </center>
 
 </BorderPane>

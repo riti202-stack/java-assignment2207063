@@ -7,7 +7,7 @@ public class HelloController {
 
 
     @FXML
-    public void calculateGPA(){
+    public void StartCalculate(){
         try {
             SceneLoader.switchScene("Scene1.fxml");
         } catch (Exception e) {

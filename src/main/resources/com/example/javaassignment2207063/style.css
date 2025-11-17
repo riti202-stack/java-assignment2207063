@@ -8,7 +8,7 @@
            -fx-border-style: dotted;
 
 }
-.container,.txt-container{
+.container{
   -fx-background-image:url("/com/example/javaassignment2207063/Calculator_Background.jpeg");
 
   -fx-background-repeat: no-repeat;

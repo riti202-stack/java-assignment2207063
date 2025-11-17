@@ -2,14 +2,18 @@ package com.example.javaassignment2207063;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 
 public class Scene1Controller {
 
+
+    public StackPane stackPane;
 
 
     public void goBack() throws Exception {
@@ -28,6 +32,7 @@ public class Scene1Controller {
     @FXML
     public void addCourseRow() {
         HBox row = new HBox(10);
+        row.setAlignment(Pos.CENTER);
 
         TextField courseName = new TextField();
         courseName.setPromptText("Course Name");
@@ -60,6 +65,7 @@ public class Scene1Controller {
         });
 
         row.getChildren().addAll(courseName, courseCode, credit, teacher1, teacher2, gradeBox, removeBtn);
+
         courseVBox.getChildren().add(row);
     }
 
@@ -77,19 +83,52 @@ public class Scene1Controller {
                 TextField t2Field = (TextField) row.getChildren().get(4);
                 ComboBox<String> gradeBox = (ComboBox<String>) row.getChildren().get(5);
 
+
                 String name = nameField.getText();
                 String code = codeField.getText();
                 double credit = creditField.getText().isEmpty() ? 0 : Double.parseDouble(creditField.getText());
                 String t1 = t1Field.getText();
                 String t2 = t2Field.getText();
                 String grade = gradeBox.getValue() != null ? gradeBox.getValue() : "";
+                double gpa =0;
+                switch (grade){
+                    case "A+"  :
+                        gpa=credit*4.00;
+                        break;
+
+                    case "A"  :
+                        gpa=credit*3.80;
+                        break;
+                    case "A-"  :
+                        gpa=credit*3.70;
+                        break;
+                    case "B+"  :
+                        gpa=credit*3.30;
+                        break;
+                    case "B"  :
+                        gpa=credit*3;
+                        break;
+                    case "C"  :
+                        gpa=credit*2.00;
+                        break;
+                    case "D"  :
+                        gpa= credit;
+                        break;
+                    case "F"  :
+                        gpa=credit*0.00;
+                        break;
+
+                }
+
 
                 if (!name.isEmpty()) {
-                    DataStore.courseList.add(new course(name, code, credit, t1, t2, grade));
+                    DataStore.courseList.add(new course(name, code, credit, t1, t2, grade,gpa));
                     totalCredits += credit;
                 }
             }
         }
+
+
 
        if (totalCredits == DataStore.totalCreditTarget) {
             SceneLoader.switchScene("Scene2.fxml");

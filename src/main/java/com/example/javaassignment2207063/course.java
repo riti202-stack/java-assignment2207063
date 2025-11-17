@@ -8,14 +8,16 @@ public class course {
     private String teacher1;
     private String teacher2;
     private String grade;
+    private double gpa;
     public course(String courseName, String courseCode, double credit,
-                  String teacher1, String teacher2, String grade) {
+                  String teacher1, String teacher2, String grade,double gpa) {
         this.CourseName = courseName;
         this.CourseCode = courseCode;
         this.Credit = credit;
         this.teacher1 = teacher1;
         this.teacher2 = teacher2;
         this.grade = grade;
+        this.gpa=gpa;
     }
 
     // Getters and Setters
@@ -25,6 +27,9 @@ public class course {
     public String getTeacher1() { return teacher1; }
     public String getTeacher2() { return teacher2; }
     public String getGrade() { return grade; }
+//    public double getgpa(){
+//        return gpa;
+//    }
 
     public void setCourseName(String courseName) { this.CourseName = courseName; }
     public void setCourseCode(String courseCode) { this.CourseCode = courseCode; }
@@ -32,6 +37,7 @@ public class course {
     public void setTeacher1(String teacher1) { this.teacher1 = teacher1; }
     public void setTeacher2(String teacher2) { this.teacher2 = teacher2; }
     public void setGrade(String grade) { this.grade = grade; }
+
 }
 
 

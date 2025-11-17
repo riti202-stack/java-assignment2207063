@@ -11,7 +11,9 @@ public class Scene2Controller {
     @FXML
     private TableColumn<course, String> nameCol, codeCol, t1Col, t2Col, gradeCol;
     @FXML
-    private TableColumn<course, Double> creditCol;
+    private TableColumn<course, Double> creditCol,gpaCol;
+
+
 
     @FXML
     public void initialize() {
@@ -21,6 +23,7 @@ public class Scene2Controller {
         t1Col.setCellValueFactory(new PropertyValueFactory<>("teacher1"));
         t2Col.setCellValueFactory(new PropertyValueFactory<>("teacher2"));
         gradeCol.setCellValueFactory(new PropertyValueFactory<>("grade"));
+        gpaCol.setCellValueFactory(new PropertyValueFactory<>("gpa"));
 
         table.setItems(DataStore.courseList);
     }
