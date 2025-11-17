@@ -5,7 +5,7 @@ import javafx.collections.ObservableList;
 
 public class DataStore {
     public static ObservableList<course> courseList = FXCollections.observableArrayList();
-    public static double totalCreditTarget = 3;
+    public static double totalCreditTarget = 15;
 }
 
 
