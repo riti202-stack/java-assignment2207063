@@ -8,16 +8,15 @@ public class course {
     private String teacher1;
     private String teacher2;
     private String grade;
-    private double gpa;
+
     public course(String courseName, String courseCode, double credit,
-                  String teacher1, String teacher2, String grade,double gpa) {
+                  String teacher1, String teacher2, String grade) {
         this.CourseName = courseName;
         this.CourseCode = courseCode;
         this.Credit = credit;
         this.teacher1 = teacher1;
         this.teacher2 = teacher2;
         this.grade = grade;
-        this.gpa=gpa;
     }
 
     // Getters and Setters

@@ -59,11 +59,7 @@
             </Button>
          </center>
          <right>
-            <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#goBack" prefHeight="50.0" prefWidth="120.0" style="-fx-background-color: pink;" text="GO BACK" textFill="#ac3535" BorderPane.alignment="CENTER">
-               <font>
-                  <Font name="Arial Bold" size="14.0" />
-               </font>
-            </Button>
+
          </right>
       </BorderPane>
    </bottom>

@@ -1,38 +1,87 @@
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.control.*?>
+<?xml version="1.0" encoding="UTF-8"?>
 
-<BorderPane xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.javaassignment2207063.Scene2Controller"
-            prefWidth="600" prefHeight="400"
-            stylesheets="@style.css">
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="400" prefWidth="600" stylesheets="@style.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javaassignment2207063.Scene2Controller">
 
     <!-- Top Section -->
     <top>
         <GridPane alignment="CENTER" style="-fx-padding: 15;">
-            <Label text="GPA Result" style="-fx-font-size: 20px;" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+            <Label style="-fx-font-size: 20px;" text="GPA Result" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+         <columnConstraints>
+            <ColumnConstraints />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints />
+         </rowConstraints>
         </GridPane>
     </top>
 
     <!-- Center Section -->
     <center>
-        <GridPane alignment="CENTER" hgap="10" vgap="10" style="-fx-padding: 20;">
-            <TableView fx:id="table"
-                       prefWidth="500"
-                       prefHeight="280"
-                       GridPane.columnIndex="0"
-                       GridPane.rowIndex="0">
+        <GridPane alignment="CENTER" hgap="10" style="-fx-padding: 20;" vgap="10">
+            <TableView fx:id="table" prefHeight="280" prefWidth="500" GridPane.columnIndex="0" GridPane.rowIndex="0">
 
                 <columns>
-                    <TableColumn fx:id="nameCol" text="Course Name" prefWidth="100"/>
-                    <TableColumn fx:id="codeCol" text="Code" prefWidth="60"/>
-                    <TableColumn fx:id="creditCol" text="Credit" prefWidth="60"/>
-                    <TableColumn fx:id="t1Col" text="Teacher 1" prefWidth="100"/>
-                    <TableColumn fx:id="t2Col" text="Teacher 2" prefWidth="100"/>
-                    <TableColumn fx:id="gradeCol" text="Grade"/>
+                    <TableColumn fx:id="nameCol" prefWidth="100" text="Course Name" />
+                    <TableColumn fx:id="codeCol" prefWidth="60" text="Code" />
+                    <TableColumn fx:id="creditCol" prefWidth="60" text="Credit" />
+                    <TableColumn fx:id="t1Col" prefWidth="100" text="Teacher 1" />
+                    <TableColumn fx:id="t2Col" prefWidth="100" text="Teacher 2" />
+                    <TableColumn fx:id="gradeCol" text="Grade" />
                 </columns>
 
             </TableView>
+         <columnConstraints>
+            <ColumnConstraints />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints />
+         </rowConstraints>
+
         </GridPane>
     </center>
+    <bottom>
+        <BorderPane fx:id="resultContainer" style="-fx-padding: 10">
+            <left>
+                <Button alignment="CENTER" maxWidth="200.0" mnemonicParsing="false" onAction="#onCalculateGpa" prefHeight="50.0" style="-fx-background-color: pink;" text="Press to Calculate Final GPA" textAlignment="CENTER" wrapText="true" BorderPane.alignment="CENTER">
+                    <BorderPane.margin>
+                        <Insets bottom="100.0" />
+                    </BorderPane.margin>
+                    <font>
+                        <Font name="Arial Black" size="14.0" />
+                    </font>
+                    <BorderPane.margin>
+                        <Insets bottom="10.0" left="50.0" right="20.0" top="10.0" />
+                    </BorderPane.margin>
+                </Button>
+            </left>
+            <right>
+                <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#goBack" prefHeight="50.0" prefWidth="120.0" style="-fx-background-color: pink;" text="GO BACK" textFill="#ac3535" BorderPane.alignment="CENTER">
+                    <font>
+                        <Font name="Arial Bold" size="14.0" />
+                    </font>
+                </Button>
+            </right>
+
+             <bottom>
+                <Label fx:id="gpaResultLabel" alignment="CENTER" prefHeight="50.0" prefWidth="500.0" style="-fx-font-weight: bold; -fx-font-size: 14; -fx-text-fill: #2E8B57; -fx-background-color: lightpink;">
+                    <BorderPane.margin>
+                        <Insets bottom="20.0" left="200.0" right="20.0" top="20.0" />
+                    </BorderPane.margin></Label>
+             </bottom>
+
+
+        </BorderPane>
+    </bottom>
 
 </BorderPane>

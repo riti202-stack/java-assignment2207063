@@ -9,17 +9,18 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+
 
 public class Scene1Controller {
 
 
     public StackPane stackPane;
+    public double tcredit =0;
 
 
-    public void goBack() throws Exception {
-        SceneLoader.switchScene("hello-view.fxml");
 
-    }
 
     @FXML
     private VBox courseVBox;
@@ -58,9 +59,15 @@ public class Scene1Controller {
         gradeBox.getItems().addAll("A+", "A", "A-", "B+", "B", "C", "D", "F");
         gradeBox.setPrefWidth(80);
 
+
         Button removeBtn = new Button("❌");
         removeBtn.setOnAction(e -> {
             courseVBox.getChildren().remove(row);
+            tcredit+= Double.parseDouble(credit.getText());
+            if(tcredit==6) {
+                return;
+            }
+
 
         });
 
@@ -77,11 +84,17 @@ public class Scene1Controller {
         for (var node : courseVBox.getChildren()) {
             if (node instanceof HBox row) {
                 TextField nameField = (TextField) row.getChildren().get(0);
+
                 TextField codeField = (TextField) row.getChildren().get(1);
+
                 TextField creditField = (TextField) row.getChildren().get(2);
+
                 TextField t1Field = (TextField) row.getChildren().get(3);
+
                 TextField t2Field = (TextField) row.getChildren().get(4);
+
                 ComboBox<String> gradeBox = (ComboBox<String>) row.getChildren().get(5);
+
 
 
                 String name = nameField.getText();
@@ -90,39 +103,12 @@ public class Scene1Controller {
                 String t1 = t1Field.getText();
                 String t2 = t2Field.getText();
                 String grade = gradeBox.getValue() != null ? gradeBox.getValue() : "";
-                double gpa =0;
-                switch (grade){
-                    case "A+"  :
-                        gpa=credit*4.00;
-                        break;
 
-                    case "A"  :
-                        gpa=credit*3.80;
-                        break;
-                    case "A-"  :
-                        gpa=credit*3.70;
-                        break;
-                    case "B+"  :
-                        gpa=credit*3.30;
-                        break;
-                    case "B"  :
-                        gpa=credit*3;
-                        break;
-                    case "C"  :
-                        gpa=credit*2.00;
-                        break;
-                    case "D"  :
-                        gpa= credit;
-                        break;
-                    case "F"  :
-                        gpa=credit*0.00;
-                        break;
 
-                }
 
 
                 if (!name.isEmpty()) {
-                    DataStore.courseList.add(new course(name, code, credit, t1, t2, grade,gpa));
+                    DataStore.courseList.add(new course(name, code, credit, t1, t2, grade));
                     totalCredits += credit;
                 }
             }
@@ -130,7 +116,7 @@ public class Scene1Controller {
 
 
 
-       if (totalCredits == DataStore.totalCreditTarget) {
+         if (totalCredits == DataStore.totalCreditTarget) {
             SceneLoader.switchScene("Scene2.fxml");
        }
 
